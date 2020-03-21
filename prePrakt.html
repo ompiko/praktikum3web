@@ -7,8 +7,46 @@
 </head>
 <body>
   <script>
-    var hello = prompt("Antum siapa ya?", "Input nama");
-    alert("Hi "+hello);
+    while (true) {
+      var hello = prompt("Antum siapa ya?", "Input nama");
+      alert("Hi " + hello);
+    }
   </script>
 </body>
 </html>
+
+<!-- <!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+
+<body>
+  <script>
+    // var bilangan = prompt("Masukkan angka ");
+    function bilPrima() {
+      var bilangan = form.inputBil.value;
+      for (i = 2; i < (bilangan - 1); i++) {
+        if (bilangan % i == 0) {
+          document.getElementById("tampil").innerHTML = "bukan bilangan prima";
+          break;
+        }
+        else {
+          document.getElementById("tampil").innerHTML = "bilangan prima";
+          break;
+        }
+      }
+    }
+  </script>
+  <form name="form">
+    <input type="text" id="inputBil" placeholder="Input Bilangan">
+    <button id="cek" onclick="bilPrima()">Cek</button>
+    <br>
+    <p id="tampil"></p>
+  </form>
+</body>
+
+</html> -->

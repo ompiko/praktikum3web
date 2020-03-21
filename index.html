@@ -8,28 +8,29 @@
 </head>
 
 <body>
+  <input type="text" id="inputBil" placeholder="Input Bilangan">
+  <button type="submit" id="cek" onclick="bilPrima()">Cek</button>
+  <br>
+  <p id="tampil"></p>
   <script>
     // var bilangan = prompt("Masukkan angka ");
     function bilPrima() {
-      var bilangan = form.inputBil.value;
-      for (i = 2; i < (bilangan - 1); i++) {
+      var bilangan = document.getElementById("inputBil").value;
+      for (i = 2; i < (bilangan); i++) {
         if (bilangan % i == 0) {
-          document.getElementById("tampil").innerHTML = "bukan bilangan prima";
+          prima=0;
           break;
+        }else {
+          prima=1;
         }
-        else {
-          document.getElementById("tampil").innerHTML = "bilangan prima";
-          break;
-        }
+      }
+      if (prima) {
+        document.getElementById("tampil").innerHTML = "Bilangan prima"
+      } else {
+        document.getElementById("tampil").innerHTML = "Bukan bilangan prima !!!"
       }
     }
   </script>
-  <form name="form">
-    <input type="text" id="inputBil" placeholder="Input Bilangan">
-    <button id="cek" onclick="bilPrima()">Cek</button>
-    <br>
-    <p id="tampil"></p>
-  </form>
 </body>
 
 </html>
