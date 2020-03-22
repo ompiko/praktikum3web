@@ -6,20 +6,40 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 </head>
 
 <body>
-  <div id="kotak" style="width: 100px; height: 100px; background-color: black;"></div>
-  <br>
-  <button type="submit" id="info">Ukuran Kotak</button>
-  <button type="submit" id="warna">Ubah Warna</button>
-  <br>
-  <input type="text" id="tinggi" placeholder="Tinggi">
-  <br>
-  <input type="text" id="lebar" placeholder="Lebar">
-  <br>
-  <button type="submit" id="resize">Ubah Ukuran</button>
+  <div class="container">
+    <div class="row" style="margin-top: 7px; margin-bottom: 7px">
+      <div id="kotak" style="width: 100px; height: 100px; background-color: black; align-items: center;"></div>
+    </div>
 
+    <div class="row" style="margin-bottom: 7px;">
+      <button class="btn btn-outline-info" type="submit" id="info" style="margin-right: 10px;">Ukuran Kotak</button>
+      <button class="btn btn-outline-warning" type="submit" id="warna">Ubah Warna</button>
+    </div>
+
+    <div class="row" style="margin-bottom: 7px; margin-top: 7px">
+      <div class="input-group">
+        <input type="text" id="tinggi" placeholder="Tinggi" class="form-control">
+        <div class="input-group-prepend">
+          <span class="input-group-text">px</span>
+        </div>
+      </div>
+      <div class="input-group" style="margin-top: 3px">
+        <input type="text" id="lebar" placeholder="Lebar" class="form-control">
+        <div class="input-group-prepend">
+          <span class="input-group-text">px</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="row">
+      <button type="submit" class="btn btn-outline-success" id="resize">Ubah Ukuran</button>
+    </div>
+  </div>
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
