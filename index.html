@@ -8,28 +8,52 @@
 </head>
 
 <body>
-  <input type="text" id="inputBil" placeholder="Input Bilangan">
-  <button type="submit" id="cek" onclick="bilPrima()">Cek</button>
+  <div id="kotak" style="width: 100px; height: 100px; background-color: black;"></div>
   <br>
-  <p id="tampil"></p>
+  <button type="submit" id="info">Ukuran Kotak</button>
+  <button type="submit" id="warna">Ubah Warna</button>
+  <br>
+  <input type="text" id="tinggi" placeholder="Tinggi">
+  <br>
+  <input type="text" id="lebar" placeholder="Lebar">
+  <br>
+  <button type="submit" id="resize">Ubah Ukuran</button>
+
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
   <script>
-    // var bilangan = prompt("Masukkan angka ");
-    function bilPrima() {
-      var bilangan = document.getElementById("inputBil").value;
-      for (i = 2; i < (bilangan); i++) {
-        if (bilangan % i == 0) {
-          prima=0;
-          break;
-        }else {
-          prima=1;
-        }
-      }
-      if (prima) {
-        document.getElementById("tampil").innerHTML = "Bilangan prima"
-      } else {
-        document.getElementById("tampil").innerHTML = "Bukan bilangan prima !!!"
-      }
+    //INFO TINGGI X LEBAR
+    $('#info').click(function () {
+      var tinggi = $('#kotak').height();
+      var lebar = $('#kotak').width();
+      var kata = "Ukuran Kotak Saat ini, Lebar " + lebar + "px Tinggi " + tinggi + "px";
+      alert(kata)
+    });
+
+
+    //UBAH WARNA
+    var colors = ["red", "green", "yellow"],
+      index = 0;
+
+    document.getElementById("warna").onclick = function () {
+      var kotak = document.getElementById("kotak");
+      kotak.style.background = colors[index];
+      index = (index + 1) % colors.length;
     }
+
+    $('#resize').click(function () {
+      var tinggi = document.getElementById("tinggi").value;
+      var lebar = document.getElementById("lebar").value;
+      var fixtinggi = tinggi + "px";
+      var fixlebar = lebar + "px";
+      $('#kotak').css("width", fixlebar);
+      $('#kotak').css("height", fixtinggi);
+    });
+
   </script>
 </body>
 
